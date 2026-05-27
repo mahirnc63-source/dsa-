@@ -89,11 +89,25 @@ void pattern7(int n){
         
     }
 }
+pattern8(int n){
+    
+    for(int i=1;i<=n;i++){
+        int count=1;
+        if(i%2==0){
+            count=0;
+        }
+        for(int j=1;j<=i;j++){
+            cout<<count;
+            count=1-count;
+        }
+        cout<<endl;
+    }
+}
 
 int main(){
     //pattern1();
     //pattern2();
-    pattern7(5);
+    pattern8(5);
     return 0;
 
 }
