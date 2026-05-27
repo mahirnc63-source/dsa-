@@ -120,11 +120,32 @@ pattern9(int n){
     }
 
 }
+void pattern10(int n){
+    int count=1;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cout<<count<<" ";
+            count++;
+        }
+        cout<<endl;
+    }
+}
+void pattern11(int n){
+    
+    for(int i=1;i<=n;i++){
+        char ch='A';
+        for(int j=1;j<=n-i+1;j++){
+            cout<<ch<<" ";
+            ch=ch+1;
+        }
+        cout<<endl;
+    }
+}
 
 int main(){
     //pattern1();
     //pattern2();
-    pattern9(5);
+    pattern11(5);
     return 0;
 
 }
