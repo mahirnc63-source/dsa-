@@ -132,20 +132,46 @@ void pattern10(int n){
 }
 void pattern11(int n){
     
-    for(int i=1;i<=n;i++){
+    for(int i=0;i<n;i++){
         char ch='A';
-        for(int j=1;j<=n-i+1;j++){
+        ch+=i;
+        for(int j=0;j<=i;j++){
+            
             cout<<ch<<" ";
-            ch=ch+1;
+            
         }
         cout<<endl;
     }
+}
+void pattern12(int n){
+    for(int i=1;i<=n;i++){
+        //space
+        for(int j=1;j<=n-i;j++){
+            cout<<" ";
+            
+
+        }
+        //character
+        char ch='A';
+        for(int j=1;j<=2*i-1;j++){
+            cout<<ch;
+            if(j<=(2*i-1)/2) ch++;
+            else ch--;
+
+        }
+        //space
+        for(int j=1;j<=n-i;j++){
+            cout<<" ";
+        }
+        cout<<endl;
+    }
+    
 }
 
 int main(){
     //pattern1();
     //pattern2();
-    pattern11(5);
+    pattern12(5);
     return 0;
 
 }
