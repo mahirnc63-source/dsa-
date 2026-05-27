@@ -103,11 +103,28 @@ pattern8(int n){
         cout<<endl;
     }
 }
+pattern9(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=2*n;j++){
+            if(j<=i){
+                cout<<j;
+            }
+            else if(j>2*n-i){
+                cout<<2*n-j+1;
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+    }
+
+}
 
 int main(){
     //pattern1();
     //pattern2();
-    pattern8(5);
+    pattern9(5);
     return 0;
 
 }
