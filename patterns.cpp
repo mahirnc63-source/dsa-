@@ -180,11 +180,37 @@ void pattern13(int n){
         cout<<endl;
     }
 }
-
+pattern14(int n){
+    for(int i=1;i<=2*n;i++){
+        int star=0;
+        int space=0;
+        if(i<=n){
+            star=i;
+            space=2*(n-i);
+        }
+        else{
+            star=2*n-i;
+            space=2*(i-n);
+        }
+            //star
+        for(int j=1;j<=star;j++){
+            cout<<"*";
+        }
+            //space
+        for(int j=1;j<=space;j++){
+            cout<<" ";
+        }
+            //star
+        for(int j=1;j<=star;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
 int main(){
     //pattern1();
     //pattern2();
-    pattern13(5);
+    pattern14(5);
     return 0;
 
 }
