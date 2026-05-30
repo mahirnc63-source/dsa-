@@ -89,7 +89,7 @@ void pattern7(int n){
         
     }
 }
-pattern8(int n){
+void pattern8(int n){
     
     for(int i=1;i<=n;i++){
         int count=1;
@@ -103,7 +103,7 @@ pattern8(int n){
         cout<<endl;
     }
 }
-pattern9(int n){
+void pattern9(int n){
     for(int i=1;i<=n;i++){
         for(int j=1;j<=2*n;j++){
             if(j<=i){
@@ -180,7 +180,7 @@ void pattern13(int n){
         cout<<endl;
     }
 }
-pattern14(int n){
+void pattern14(int n){
     for(int i=1;i<=2*n;i++){
         int star=0;
         int space=0;
@@ -222,9 +222,12 @@ void pattern15(int n){
     }
 
 }
+void pattern16(int n){
+
+    
+}
 int main(){
-    //pattern1();
-    //pattern2();
+    
     pattern15(6);
     return 0;
 
