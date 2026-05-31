@@ -19,8 +19,26 @@ void reverse(int n){
     }
     cout<<rev;
 }
+void palindrome(int n){
+    int num=n;
+    int rem=0;
+    int rev=0;
+    while(n>0){
+        rem=n%10;
+        n=n/10;
+        rev=rev*10+rem;
+    }
+    if(num==rev){
+        cout<<"palindrome";
+    }
+    else{
+        cout<<"not palindrome";
+    }
+
+}
 int main(){
     //countdigit(467890654);
-    reverse(4567);
+    //reverse(4567);
+    palindrome(121);
     return 0;
 }
