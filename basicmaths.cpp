@@ -65,10 +65,19 @@ void armstrong(int n){
     
 
 }
+void divisor(int n){
+    for(int i=1;i<=n;i++){
+        if(n%i==0){
+            cout<<i<<endl;
+        }
+
+    }
+}
 int main(){
     //countdigit(467890654);
     //reverse(4567);
     //palindrome(121);
-    armstrong(153);
+    //armstrong(153);
+    divisor(6);
     return 0;
 }
