@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 void countdigit(int n){
     int count=0;
@@ -36,9 +37,38 @@ void palindrome(int n){
     }
 
 }
+void armstrong(int n){
+    int count=0;
+    int num=n;
+    int rem=0;
+    int arm=0;
+    while(n>0){
+        n=n/10;
+        count+=1;
+
+    }
+    n=num;
+    while(n>0){
+        rem=n%10;
+        n=n/10;
+        arm += round(pow(rem, count));
+        
+
+    }
+    
+    if(arm==num){
+        cout<<"armstrong";
+    }
+    else{
+        cout<<"not armstrong";
+    }
+    
+
+}
 int main(){
     //countdigit(467890654);
     //reverse(4567);
-    palindrome(121);
+    //palindrome(121);
+    armstrong(153);
     return 0;
 }
