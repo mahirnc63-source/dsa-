@@ -77,7 +77,7 @@ int main(){
     //countdigit(467890654);
     //reverse(4567);
     //palindrome(121);
-    //armstrong(153);
+    armstrong(153);
     divisor(6);
     return 0;
 }
