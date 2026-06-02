@@ -12,6 +12,7 @@ void f1(int i,int n){
     cout<<i<<endl;
 }
 int main(){
+    f(1,4);
     f1(4,4);
     
 }
