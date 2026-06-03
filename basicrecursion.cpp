@@ -16,9 +16,15 @@ void f2(int i,int n){
     cout<<i<<endl;
     f2(i-1,n);
 }
+int sum(int n){
+    if(n==0) return 0;
+    return n+sum(n-1);
+}
 int main(){
     //f(1,4);
     //f1(4,4);
-    f2(4,4);
+    //f2(4,4);
+    cout<<sum(3);
+    return 0;
     
 }
