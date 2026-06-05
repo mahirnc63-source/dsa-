@@ -24,11 +24,22 @@ int factorial(int n){
     if(n==0) return 1;
     return n*factorial(n-1);
 }
+void rarray(int i,int arr[],int n){
+    if(i>=n/2) return;
+    swap(arr[i],arr[n-i-1]);
+    rarray(i+1,arr,n);
+}
 int main(){
     //f(1,4);
     //f1(4,4);
     //f2(4,4);
-    cout<<factorial(5);
+    //cout<<factorial(5);
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++) cin>>arr[i];
+    rarray(0,arr,n);
+    for(int i=0;i<n;i++) cout<<arr[i]<<" ";
     return 0;
     
 }
