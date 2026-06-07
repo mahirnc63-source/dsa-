@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int main(){
     int n;
@@ -7,16 +7,19 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>a[i];
     }
-    int hash[13]={0};
+    map<int,int>mpp;
+    for(int i=0;i<n;i++){
+        mpp[a[i]]++;
+    }
+
+    /*int hash[13]={0};
     for(int i=0;i<n;i++){
         hash[a[i]]+=1;
+    }*/
+    for (auto x : mpp) {
+        cout << x.first << " " << x.second << endl;
     }
-    int q;
-    cin>>q;
-    while(q--){
-        int number;
-        cin>>number;
-        cout<<hash[number]<<endl;
-    }
+
+
     return 0;
 }
