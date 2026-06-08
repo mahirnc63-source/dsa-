@@ -8,6 +8,6 @@ void printNumber() {
     }
 int main(){
     printNumber();
-    cout<<"hello world";
+    cout<<"updated";
     return 0;
 }
