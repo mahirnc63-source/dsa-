@@ -8,5 +8,6 @@ void printNumber() {
     }
 int main(){
     printNumber();
+    cout<<"hello world";
     return 0;
 }
