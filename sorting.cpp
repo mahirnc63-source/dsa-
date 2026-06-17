@@ -35,10 +35,25 @@ void bubblesort(int arr[],int n){
         cout<<arr[i]<<" ";
     }
 }
+void insertionsort(int arr[],int n){
+    for(int i=0;i<n;i++){
+        int j=i;
+        while(j>0&&arr[j-1]>arr[j]){
+            int temp=arr[j];
+            arr[j]=arr[j-1];
+            arr[j-1]=temp;
+            j--;
+        }
+    }
+    for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+    
+
+}
 int main(){
     int arr[]={13,26,48,4,9};
     int n = sizeof(arr) / sizeof(arr[0]);
     //selectionsort(arr,n);
-    bubblesort(arr,n);
+    //bubblesort(arr,n);
+    insertionsort(arr,n);
     return 0;
 }
