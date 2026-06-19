@@ -50,12 +50,12 @@ void insertionsort(int arr[],int n){
 
 }
 void merge(int arr[],int low,int high,int mid){
-    int k[];
+    int k[high-low+1];
     int i=0;
     int left=low;
     int right=mid+1;
     while(left<=mid&&right<=high){
-        if(left<=right){
+        if(arr[left]<=arr[right]){
             k[i]=arr[left];
             left++;
             i++;
@@ -80,17 +80,23 @@ void merge(int arr[],int low,int high,int mid){
             i++;
 
     }
+    for(int j = 0; j < i; j++){
+    arr[low + j] = k[j];
+}
 
 }
 void ms(int arr[],int low,int high){
     if(low>=high) return;
     int mid=(low+high)/2;
-    ms(arr[],low,mid);
-    ms(arr[],mid+1,high);
-    merge(arr[],low,high,mid);
+    ms(arr,low,mid);
+    ms(arr,mid+1,high);
+    merge(arr,low,high,mid);
 }
 void mergesort(int arr[],int n){
-    ms(arr[],0,n-1);
+    ms(arr,0,n-1);
+    for(int i=0;i<=n-1;i++){
+        cout<<arr[i]<<" ";
+    }
 
 }
 int main(){
@@ -99,5 +105,6 @@ int main(){
     //selectionsort(arr,n);
     //bubblesort(arr,n);
     //insertionsort(arr,n);
+    mergesort(arr,n);
     return 0;
 }
