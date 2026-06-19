@@ -49,68 +49,55 @@ void insertionsort(int arr[],int n){
     
 
 }
-class Solution {
-public:
-    // Function to merge two halves of the array
-    void merge(vector<int>& arr, int low, int mid, int high) {
-        // Create temp arrays
-        vector<int> temp;
-        int left = low, right = mid + 1;
+void merge(int arr[],int low,int high,int mid){
+    int k[];
+    int i=0;
+    int left=low;
+    int right=mid+1;
+    while(left<=mid&&right<=high){
+        if(left<=right){
+            k[i]=arr[left];
+            left++;
+            i++;
 
-        // Merge two sorted halves
-        while (left <= mid && right <= high) {
-            if (arr[left] <= arr[right])
-                temp.push_back(arr[left++]);
-            else
-                temp.push_back(arr[right++]);
         }
+        else{
+            k[i]=arr[right];
+            right++;
+            i++;
+        }
+    }
+    while(left<=mid){
+        k[i]=arr[left];
+            left++;
+            i++;
 
-        // Copy remaining elements from left half
-        while (left <= mid)
-            temp.push_back(arr[left++]);
 
-        // Copy remaining elements from right half
-        while (right <= high)
-            temp.push_back(arr[right++]);
+    }
+    while(right<=high){
+        k[i]=arr[right];
+            right++;
+            i++;
 
-        // Copy sorted elements back to original array
-        for (int i = low; i <= high; i++)
-            arr[i] = temp[i - low];
     }
 
-    // Recursive merge sort function
-    void mergeSort(vector<int>& arr, int low, int high) {
-        if (low >= high)
-            return;
-
-        // Find the middle index
-        int mid = (low + high) / 2;
-
-        // Recursively sort left half
-        mergeSort(arr, low, mid);
-
-        // Recursively sort right half
-        mergeSort(arr, mid + 1, high);
-
-        // Merge the two sorted halves
-        merge(arr, low, mid, high);
-    }
-};
-
-int main() {
-    vector<int> arr = {5, 2, 8, 4, 1};
-    Solution sol;
-    sol.mergeSort(arr, 0, arr.size() - 1);
-    for (int x : arr)
-        cout << x << " ";
-    cout << endl;
-    return 0;
 }
-/*int main(){
+void ms(int arr[],int low,int high){
+    if(low>=high) return;
+    int mid=(low+high)/2;
+    ms(arr[],low,mid);
+    ms(arr[],mid+1,high);
+    merge(arr[],low,high,mid);
+}
+void mergesort(int arr[],int n){
+    ms(arr[],0,n-1);
+
+}
+int main(){
     int arr[]={13,26,48,4,9};
     int n = sizeof(arr) / sizeof(arr[0]);
     //selectionsort(arr,n);
     //bubblesort(arr,n);
     //insertionsort(arr,n);
     return 0;
-}*/
+}
