@@ -24,10 +24,21 @@ int secondlargest(int arr[],int n){
     return slarge;
 
 }
+int issorted(int arr[],int n){
+    for(int i=1;i<n;i++){
+        if(arr[i]>=arr[i-1]){
+
+        }
+        else{
+            return 0;
+        }
+    }
+    return 1;
+}
 int main(){
-    int arr[6]={2,4,8,6,9};;
+    int arr[6]={2,3,6,8,4,9};;
     int n=sizeof(arr) / sizeof(arr[0]);
-    int a=secondlargest(arr,n);
+    int a=issorted(arr,n);
     cout<<"slargest="<<a;
 
     return 0;
