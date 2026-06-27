@@ -35,11 +35,23 @@ int issorted(int arr[],int n){
     }
     return 1;
 }
+void rotateleft1(vector<int>& arr){
+    int temp=arr[0];
+    for(int i=1;i<arr.size();i++){
+        arr[i-1]=arr[i];
+    }
+    arr[arr.size()-1]=temp;
+}
 int main(){
-    int arr[6]={2,3,6,8,4,9};;
+    /*int arr[6]={2,3,6,8,4,9};;
     int n=sizeof(arr) / sizeof(arr[0]);
     int a=issorted(arr,n);
-    cout<<"slargest="<<a;
+    cout<<"slargest="<<a;*/
+    vector<int> arr={1,2,3,4,5};
+    rotateleft1(arr);
+    for(int x:arr){
+        cout<<x<<" ";
+    }
 
     return 0;
 }
