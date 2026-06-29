@@ -49,6 +49,12 @@ void rotateleft1(vector<int>& arr,int k,int n){
         arr[n-k+i]=temp[i];
     }
 }
+void rotateleft2(vector<int>& arr,int k,int n){
+    k=k%n;
+    reverse(arr.begin(),arr.begin()+k);
+    reverse(arr.begin()+k,arr.begin()+n);
+    reverse(arr.begin(),arr.begin()+n);
+}
 
 int main(){
     /*int arr[6]={2,3,6,8,4,9};;
@@ -58,7 +64,7 @@ int main(){
     vector<int> arr={1,2,3,4,5};
     int k=8;
     int n=arr.size();
-    rotateleft1(arr,k,n);
+    rotateleft2(arr,k,n);
     for(int x:arr){
         cout<<x<<" ";
     }
