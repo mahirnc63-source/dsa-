@@ -55,7 +55,21 @@ void rotateleft2(vector<int>& arr,int k,int n){
     reverse(arr.begin()+k,arr.begin()+n);
     reverse(arr.begin(),arr.begin()+n);
 }
+void rightrotate(vector<int>& arr,int n,int k){
+    k=k%n;
+    int temp[k];
+    for(int i=0;i<k;i++){
+        temp[i]=arr[n-k+i];
 
+    }
+    for(int i=n-1;i>=k;i--){
+        arr[i]=arr[i-k];
+    }
+    for(int i=0;i<k;i++){
+        arr[i]=temp[i];
+    }
+
+}
 int main(){
     /*int arr[6]={2,3,6,8,4,9};;
     int n=sizeof(arr) / sizeof(arr[0]);
@@ -64,7 +78,7 @@ int main(){
     vector<int> arr={1,2,3,4,5};
     int k=8;
     int n=arr.size();
-    rotateleft2(arr,k,n);
+    rightrotate(arr,n,k);
     for(int x:arr){
         cout<<x<<" ";
     }
