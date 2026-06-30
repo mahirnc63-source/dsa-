@@ -70,6 +70,14 @@ void rightrotate(vector<int>& arr,int n,int k){
     }
 
 }
+void rightrotate2(vector<int>& arr,int n,int k){
+    k=k%n;
+    
+    reverse(arr.begin()+(n-k),arr.begin()+n);
+    reverse(arr.begin(),arr.begin()+(n-k));
+    reverse(arr.begin(),arr.begin()+n);
+
+}
 int main(){
     /*int arr[6]={2,3,6,8,4,9};;
     int n=sizeof(arr) / sizeof(arr[0]);
@@ -78,7 +86,7 @@ int main(){
     vector<int> arr={1,2,3,4,5};
     int k=8;
     int n=arr.size();
-    rightrotate(arr,n,k);
+    rightrotate2(arr,n,k);
     for(int x:arr){
         cout<<x<<" ";
     }
